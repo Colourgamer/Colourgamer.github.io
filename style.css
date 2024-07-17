@@ -1,0 +1,182 @@
+@font-face {
+    font-family: JuneBug;
+    src: url('fonts/Kollektif.TTF');
+}
+
+* {
+    color: #f1e0e0;
+    font-family: Kollektif;
+}
+
+body {
+    background-color: #353232;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-size: 120%;
+}
+
+/* Header */
+.backdrop {
+    background: #f1e0e0 url(images/expensivebread.jpg) center center/cover no-repeat;
+    width: 100%;
+    height: 50rem;
+}
+
+.pickgradient {
+    background: linear-gradient(to top, rgba(53, 50, 50, 100) 10%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    height: 100%;
+}
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #353232;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navbar button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 150%;
+}
+
+.navbar button:hover {
+    background-color: #575757;
+}
+
+.page {
+    display: none;
+    padding: 20px;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Content */
+.boxcontainer {
+    /*background-color: #575757;*/
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.boxcontainer div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boxcontainer div {
+    padding: 2%;
+    /* padding = x */
+    flex: 46%;
+}
+
+.boxcontainer#id1 div {
+    flex: 46%;
+    /* flex = wantedValue - x * 2 */
+}
+
+.boxcontainer#id3 #content3 {
+    flex: 96%;
+}
+
+/* Style for Phone Size */
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 150%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .boxcontainer#id1 div {
+        flex: 100%;
+    }
+
+    .boxcontainer#id2 #content1 {
+        order: 1;
+        flex: 96%;
+    }
+
+    .boxcontainer#id2 #content2 {
+        order: 0;
+        flex: 96%;
+    }
+
+    .boxcontainer#id2 #content3 {
+        order: 2;
+        flex: 96%;
+    }
+
+    .boxcontainer#id2 #content4 {
+        order: 3;
+        flex: 96%;
+    }
+
+    .boxcontainer#id3 #content1 {
+        flex: 96%;
+    }
+
+    .boxcontainer#id3 #content2 {
+        flex: 96%;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 20%;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 100%;
+    }
+}
+
+.animated-element {
+    animation-name: slideDown;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.panel {
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+    max-height: 5rem;
+
+    filter:grayscale(1);
+}
+
+.panel:hover{
+    filter:grayscale(0.5);
+}
+
+.panel.expanded {
+    max-height: 20rem;
+    filter:grayscale(0);
+}
+
+.panel div div h2, .panel div div h3 {
+    text-align: center;
+}
+
