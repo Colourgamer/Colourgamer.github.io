@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bread</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -16,19 +16,16 @@
         </div>
     </header>
     <nav class="navbar" id="sticky">
-        <div class="controls">
-            <button id="pagebtn1">Bread</button>
-            <button id="pagebtn2">History</button>
-            <button id="pagebtn3">Making</button>
-            <button id="pagebtn4">Game</button>
-        </div>
+        <div><button id="pagebtn1">Bread</button></div>
+        <div><button id="pagebtn2">History</button></div>
+        <div><button id="pagebtn3">Making</button></div>
+        <div><button id="pagebtn4">Game</button></div>
     </nav>
 
-    <!-- div.boxcontainer>div*3#content$ -->
     <main id="pagecontainer">
         <div class="page" id="page1">
             <div class="boxcontainer" id="id1">
-                <div id="content1">
+                <div class="content1">
                     <h1>Bread</h1>
                     <p>Bread is a staple food made from dough and water. It has been an important part of many people's
                         diets. It is one of humanity's oldest foods, has been important since the dawn of agriculture,
@@ -52,22 +49,21 @@
                         "broken piece" or "morsel".
                     </p>
                 </div>
-                <div id="content2">
+                <div class="content2">
                     <img src="images/bread.jpg" alt="many types of bread">
-                    <p><i>cool image of breads</i></p></img>
+                    <p><i>cool image of breads</i></p>
 
                 </div>
-                <div id="content3"></div>
+                <div class="content3"></div>
             </div>
-        </div>
         </div>
         <div class="page" id="page2">
             <div class="boxcontainer" id="id2">
-                <div id="content1">
-                    <img src="images/flatbread.jpg" alt="not actually primitive flatbread"></img>
+                <div class="content1">
+                    <img src="images/flatbread.jpg" alt="not actually primitive flatbread">
                     <p><i>probably not primitive flatbread</i></p>
                 </div>
-                <div id="content2">
+                <div class="content2">
                     <h1>History</h1>
                     <p>
                         Bread is one of the oldest prepared foods. Evidence from 30,000 years ago in Europe and
@@ -86,7 +82,7 @@
                         already using ash to enhance the dough during baking.
                     </p>
                 </div>
-                <div id="content3">
+                <div class="content3">
                     <br>
                     <p>
                         There were multiple sources of leavening available for early bread. Airborne yeasts could be
@@ -111,15 +107,15 @@
                         its impact on nutritional value.
                     </p>
                 </div>
-                <div id="content4">
-                    <img src="images/manybread.jpg" alt="mass produced bread"></img>
+                <div class="content4">
+                    <img src="images/manybread.jpg" alt="mass produced bread">
                     <p><i>tons of bread made pretty fast</i></p>
                 </div>
             </div>
         </div>
         <div class="page" id="page3">
             <div class="boxcontainer" id="id3">
-                <div id="content1">
+                <div class="content1">
                     <h1>Making</h1>
                     <p>
                         Doughs are typically baked, but in some cuisines, breads are prepared using different methods:
@@ -151,28 +147,80 @@
                         <li>Seeds</li>
                     </ul>
                 </div>
-                <div id="content2">
-                    <img src="images/makingbread.jpg" alt="making bread"></img>
+                <div class="content2">
+                    <img src="images/makingbread.jpg" alt="making bread">
                     <p><i>making bread</i></p>
                 </div>
-                <div id="content3">
+                <div class="content3">
                     <br>
                     <p>
-                        Methods of processing dough into bread include the straight dough process, the sourdough process,
+                        Methods of processing dough into bread include the straight dough process, the sourdough
+                        process,
                         the Chorleywood bread process and the sponge and dough process.
                     </p>
                 </div>
-                <div id="content4">
+                <div class="content4">
                     <h2>Some Types Of Bread</h2>
-                    <div class="carousel" id="carousel"></div>
+                    <div class="grid" id="grid"></div>
                 </div>
             </div>
         </div>
         <div class="page" id="page4">
-            page 4 content
+            <div class="boxcontainer" id="id4">
+                <div class="content1">
+                    <h1>Bread Making Game</h1>
+                    <p>Make different bread types. Make bread according to the ordered bread.</p>
+                    <h2>Ingredients</h2>
+                    <div class="ingredientList"></div>
+                    <h2>Baking Method</h2>
+                    <div class="bakingMethods"></div>
+
+                </div>
+                <div class="content2">
+                    <div class="content3">
+                        <h2>Crafting</h2>
+                        <div id="crafting">
+                            <div id="makeBread">Make Bread</div>
+                            <div id="result"></div>
+                        </div>
+                    </div>
+                    <div class="content4">
+                        <h2>Order</h2>
+                        <div id="orderbox">
+                            <div id="order"></div>
+                            <div id="orderresultbox">
+                                <div id="orderresult">
+                                    <h3>Correct!</h3>
+                                </div>
+                                <div id="nextOrder">Next Order</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
+    <footer>
+        <div class="pickgradient">
+            <div></div>
+        </div>
+        <div class="feedback">
+            <h2>Send feedback</h2>
+            <div id="thankYouMessage">Thank you for your feedback!</div>
+            <form id="feedbackForm" autocomplete="on">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="thoughts">Your Thoughts:</label>
+                <textarea id="thoughts" name="thoughts" required></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </footer>
 </body>
 
 </html>
